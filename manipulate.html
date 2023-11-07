@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Manipulate</title>
+</head>
+<body style="text-align: center;">  
+    <h1>Play with Number</h1>
+    <input type="text" name="" id="input" placeholder="Please input a Number">
+    <br>
+    <br>
+    <button id="btn-1">Make Double</button>
+    <button id="btn-2">Make Thripple</button>
+
+    <h2 id="number">The Double is: <span id="answer"></span></h2>
+    <h2>The Tripple is: <span id="tripple"></span></h2>
+    <script>
+        const doubleButton = document.getElementById('btn-1');
+        doubleButton.addEventListener('click', function(){
+        const answerIs = document.getElementById('answer');
+        const input = document.getElementById('input');
+        const number = input.value;
+        const inputValue = parseInt(number);
+            
+            if(typeof inputValue !== 'number' || inputValue < 0) {
+                answerIs.innerText = 'Please provide me a valid number';
+            }
+            else {
+                const output = number * 2;
+                answerIs.innerText = output;
+            }
+        })
+
+        document.getElementById('btn-2').addEventListener('click', function(){
+            const output = document.getElementById('tripple');
+            const inputField = document.getElementById('input');
+            let inputValue = inputField.value;
+            if(typeof parseInt(inputValue) !== 'number' || parseInt(inputValue) < 0){
+                output.innerText = 'Please provide me a valid number';
+            }
+            else {
+                const trippleIs = Math.pow(inputValue, 3);
+                output.innerText = trippleIs;
+            }
+        })
+    </script>
+</body>
+</html>
