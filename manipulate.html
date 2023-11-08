@@ -23,8 +23,9 @@
         const number = input.value;
         const inputValue = parseInt(number);
             
-            if(typeof inputValue !== 'number' || inputValue < 0) {
-                answerIs.innerText = 'Please provide me a valid number';
+        input.value = '';
+            if(isNaN(inputValue) || inputValue < 0){
+                alert('Please provide me a valid number');
             }
             else {
                 const output = number * 2;
@@ -36,11 +37,12 @@
             const output = document.getElementById('tripple');
             const inputField = document.getElementById('input');
             let inputValue = inputField.value;
-            if(typeof parseInt(inputValue) !== 'number' || parseInt(inputValue) < 0){
-                output.innerText = 'Please provide me a valid number';
+            inputField.value = '';
+            if(isNaN(inputValue) || inputValue < 0){
+                alert('Please provide me a valid number');
             }
             else {
-                const trippleIs = Math.pow(inputValue, 3);
+                const trippleIs = inputValue * 3;
                 output.innerText = trippleIs;
             }
         })
